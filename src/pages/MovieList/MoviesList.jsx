@@ -1,6 +1,6 @@
 import React from 'react';
 import Movie from 'pages/Movies/Movies';
-import { Grid } from './MovieList.styled';
+import { Grid } from 'pages/MovieList/MovieList.styled';
 
 const MovieList = ({ movies, configDetails, location }) => {
   if (configDetails === null) return;

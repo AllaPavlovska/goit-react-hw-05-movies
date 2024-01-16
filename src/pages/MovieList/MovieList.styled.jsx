@@ -14,6 +14,5 @@ export const ButtonListMovie = styled(NavLink)`
 export const Grid = styled.ul`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 280px));
-  grid-gap: ${({ theme }) => theme.spacing(6)};
   justify-content: center;
 `;

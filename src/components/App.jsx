@@ -8,7 +8,7 @@ const MovieDetails = lazy(() => import('../pages/MovieDetails/MovieDetails'));
 const Cast = lazy(() => import('../pages/Cast/Cast'));
 const Reviews = lazy(() => import('../pages/Reviews/Reviews'));
 
- const App = () => {
+ export const App = () => {
   return (
     <Routes>
       <Route path="/" element={<SharedLayout />}>
