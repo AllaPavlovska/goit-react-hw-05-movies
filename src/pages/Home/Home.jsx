@@ -42,7 +42,7 @@ import { getMovies } from 'components/service';
 import { Text } from 'components/Text/Text.styled';
 import { HomeContainer } from './Home.styled';
 import { LoaderContainer as Loader } from 'components/Loader/Loader.styled';
-const MovieList = lazy(() => import('pages/MoviesList'));
+const MovieList = lazy(() => import('pages/MovieList/MoviesList'));
 
 const Home = () => {
   const [movies, setMovies] = useState(null);
