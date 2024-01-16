@@ -5,10 +5,10 @@ import { SharedLayout } from './SharedLayout/SharedLayout';
 const Home = lazy(() => import('../pages/Home/Home'));
 const Movies = lazy(() => import('../pages/Movies'));
 const MovieDetails = lazy(() => import('../pages/MovieDetails'));
-const Cast = lazy(() => import('../pages/Cast'));
-const Reviews = lazy(() => import('../pages/Reviews'));
+const Cast = lazy(() => import('../pages/Cast/Cast'));
+const Reviews = lazy(() => import('../pages/Reviews/Reviews'));
 
-export const App = () => {
+ const App = () => {
   return (
     <Routes>
       <Route path="/" element={<SharedLayout />}>
