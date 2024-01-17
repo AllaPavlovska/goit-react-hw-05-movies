@@ -1,47 +1,37 @@
-import { lazy, useEffect, useState } from 'react';
-import { useLocation, useSearchParams } from 'react-router-dom';
-import { getMoviesByQuery } from 'components/service';
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 import { Text } from 'components/Text/Text.styled';
-import { Loader } from 'components/Loader/Loader';
-import Search from 'components/Search/Search';
+import { Image } from 'pages/Movies/Movies.styled';
 
-const MovieList = lazy(() => import('pages/MovieList/MoviesList'));
-
-const Movies = () => {
-  const [movies, setMovies] = useState(null);
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const location = useLocation();
-  const [searchParams, setSearchParams] = useSearchParams();
-  const query = searchParams.get('query') ?? '';
-
-  useEffect(() => {
-    if (query && !movies) {
-      setLoading(true);
-
-      getMoviesByQuery(query)
-        .then(response => setMovies(response.results))
-        .catch(err => setError(err.message))
-        .finally(setLoading(false));
-    }
-  }, [query, movies]);
-
-  const handleSubmit = query => {
-    if (!query) setMovies(null);
-
-    const value = query;
-    setSearchParams(value !== '' ? { query: value } : {});
-  };
+const Movie = ({ movie, location }) => {
+  const baseUrl = 'http://image.tmdb.org/t/p';
+  const fileSize = '/w500';
+  const defaultImg =
+    'https://ireland.apollo.olxcdn.com/v1/files/0iq0gb9ppip8-UA/image;s=1000x700';
 
   return (
-    <>
-      <Search handleSubmit={handleSubmit} />
-      {movies?.length === 0 && <p>We don`t have any movies 😔</p>}
-      {movies?.length > 0 && <MovieList movies={movies} location={location} />}
-      {loading && <Loader />}
-      {error && <Text textAlign="center">Sorry. {error} 😭</Text>}
-    </>
+    
+      <NavLink
+        to={`/movies/${movie.id}`}
+        state={{ from: location }}
+        style={{
+          textDecoration: 'none',
+          color: 'inherit',
+          height: '100%',
+        }}
+      >
+        <Image
+          src={
+            !!movie.backdrop_path
+              ? `${baseUrl}${fileSize}${movie.backdrop_path}`
+              : defaultImg
+          }
+          alt={movie.title}
+        />
+        <Text>{movie.original_title}</Text>
+      </NavLink>
+   
   );
 };
 
-export default Movies;
+export default Movie;

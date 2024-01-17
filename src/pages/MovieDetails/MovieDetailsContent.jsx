@@ -1,5 +1,5 @@
-import Genres from '';
-import { MovieInfo, MovieTextContainer, Poster } from './MovieDetails.styled';
+import Genres from 'components/Genres/Genres';
+import { MovieInfo, MovieTextContainer, Poster } from 'pages/MovieDetails/MovieDetails.styled';
 
 const MovieDatailsContent = ({ movie, error }) => {
   const baseUrl = 'http://image.tmdb.org/t/p';

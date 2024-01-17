@@ -6,11 +6,11 @@ export const Loader = () => {
     <LoaderContainer>
       <Grid
         visible={true}
-        height="80"
-        width="80"
-        color="#4fa94d"
+        height="60"
+        width="60"
+        color="#4fa95d"
         ariaLabel="grid-loading"
-        radius="12.5"
+        radius="10"
         wrapperStyle={{}}
         wrapperClass="grid-wrapper"
       />

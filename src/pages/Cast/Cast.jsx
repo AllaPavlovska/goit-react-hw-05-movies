@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { CastItem, CastContainer } from './Cast.styled';
+import { CastItem, CastContainer } from 'pages/Cast/Cast.styled';
 import { getCastsById } from 'components/service';
 import { useParams } from 'react-router-dom';
 import { Loader } from 'components/Loader/Loader';
