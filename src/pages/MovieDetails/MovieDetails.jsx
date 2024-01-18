@@ -3,11 +3,11 @@ import { Outlet, useLocation, useParams } from 'react-router-dom';
 import { getMoviesById } from 'components/service';
 import { AddInfo } from 'components/AddInfo/AddInfo';
 import { ButtonListMovie } from 'pages/MovieList/MovieList.styled';
-import MovieDatailsContent from 'pages/MovieDetails/MovieDetails';
+import MovieDatailsContent from 'pages/MovieDetails/MovieDetailsContent';
 import { Loader } from 'components/Loader/Loader';
 
 const MovieDetails = () => {
-  const { movieId } = useParams(null);
+  const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
   const [error, setError] = useState(null);
 

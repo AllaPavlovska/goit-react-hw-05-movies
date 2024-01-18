@@ -10,27 +10,25 @@ const Movie = ({ movie, location }) => {
     'https://ireland.apollo.olxcdn.com/v1/files/0iq0gb9ppip8-UA/image;s=1000x700';
 
   return (
-    
-      <NavLink
-        to={`/movies/${movie.id}`}
-        state={{ from: location }}
-        style={{
-          textDecoration: 'none',
-          color: 'inherit',
-          height: '100%',
-        }}
-      >
-        <Image
-          src={
-            !!movie.backdrop_path
-              ? `${baseUrl}${fileSize}${movie.backdrop_path}`
-              : defaultImg
-          }
-          alt={movie.title}
-        />
-        <Text>{movie.original_title}</Text>
-      </NavLink>
-   
+    <NavLink
+      to={`/movies/${movie.id}`}
+      state={{ from: location }}
+      style={{
+        textDecoration: 'none',
+        color: 'inherit',
+        height: '100%',
+      }}
+    >
+      <Image
+        src={
+          !!movie.backdrop_path
+            ? `${baseUrl}${fileSize}${movie.backdrop_path}`
+            : defaultImg
+        }
+        alt={movie.title}
+      />
+      <Text>{movie.original_title}</Text>
+    </NavLink>
   );
 };
 
