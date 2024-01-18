@@ -1,17 +1,63 @@
+// import React from 'react';
+// import { NavLink } from 'react-router-dom';
+// import { Text } from 'components/Text/Text.styled';
+// import {  Image } from 'pages/Movies/Movies.styled';
+
+// const Movie = ({ movie, location }) => {
+//   const baseUrl = 'http://image.tmdb.org/t/p';
+//   const fileSize = '/w500';
+//   const defaultImg =
+//     'https://ireland.apollo.olxcdn.com/v1/files/0iq0gb9ppip8-UA/image;s=1000x700';
+
+//   return (
+  
+//       <NavLink
+//         to={`/movies/${movie.id}`}
+//         state={{ from: location }}
+//         style={{
+//           textDecoration: 'none',
+//           color: 'inherit',
+//           height: '100%',
+//         }}
+//       >
+//         <Image
+//           src={
+//             !!movie.backdrop_path
+//               ? `${baseUrl}${fileSize}${movie.backdrop_path}`
+//               : defaultImg
+//           }
+//           alt={movie.title}
+//         />
+//         <Text>{movie.original_title}</Text>
+//       </NavLink>
+   
+//   );
+// };
+
+// export default Movie;
+
+
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation, useParams } from 'react-router-dom';
 import { Text } from 'components/Text/Text.styled';
 import { Image } from 'pages/Movies/Movies.styled';
 
-const Movie = ({ movie, location }) => {
+const Movie = () => {
   const baseUrl = 'http://image.tmdb.org/t/p';
   const fileSize = '/w500';
   const defaultImg =
     'https://ireland.apollo.olxcdn.com/v1/files/0iq0gb9ppip8-UA/image;s=1000x700';
 
+  const { movieId } = useParams();
+  const location = useLocation();
+
+  if (!movieId) {
+    return null;
+  }
+
   return (
     <NavLink
-      to={`/movies/${movie.id}`}
+      to={`/movies/${movieId}`}
       state={{ from: location }}
       style={{
         textDecoration: 'none',
@@ -21,13 +67,13 @@ const Movie = ({ movie, location }) => {
     >
       <Image
         src={
-          !!movie.backdrop_path
-            ? `${baseUrl}${fileSize}${movie.backdrop_path}`
+          movieId 
+            ? `${baseUrl}${fileSize}/${movieId}`
             : defaultImg
         }
-        alt={movie.title}
+        alt={`Movie ${movieId}`}
       />
-      <Text>{movie.original_title}</Text>
+      <Text>{`Movie ${movieId}`}</Text>
     </NavLink>
   );
 };
