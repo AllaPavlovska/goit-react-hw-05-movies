@@ -1,11 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
-import {
-  SearchForm,
-  SearchFormInput,
-  Searchbar,
-} from './Search.styled';
+import { SearchForm, SearchFormInput, Searchbar } from './Search.styled';
 
 const Search = ({ handleSubmit }) => {
   const inputRef = useRef();
@@ -35,7 +31,6 @@ const Search = ({ handleSubmit }) => {
           defaultValue={query}
           placeholder="Search movies"
         />
-      
       </SearchForm>
     </Searchbar>
   );

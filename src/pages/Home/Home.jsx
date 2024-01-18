@@ -1,7 +1,5 @@
 import React, { lazy, useEffect, useState } from 'react';
-import {
-  getMovies
-} from 'components/service';
+import { getMovies } from 'components/service';
 import { Text } from 'components/Text/Text.styled';
 import { HomeContainer } from 'pages/Home/Home.styled';
 import { Loader } from 'components/Loader/Loader';
