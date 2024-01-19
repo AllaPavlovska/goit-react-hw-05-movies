@@ -1,5 +1,5 @@
 import React from 'react';
-import Movie from 'pages/Movie/Movie';
+import Movie from 'components/Movie/Movie';
 import { Grid } from 'pages/MovieList/MovieList.styled';
 
 const MovieList = ({ movies, configDetails, location }) => {

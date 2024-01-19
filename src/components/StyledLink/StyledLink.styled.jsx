@@ -2,21 +2,21 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const HeaderLink = styled(NavLink)`
-  overflow: hidden;
+   overflow: hidden;
   position: relative;
   text-decoration: none;
   display: inline-block;
   text-align: center;
-  width: 60px;
+  width: 70px;
   height: 20px;
   padding: 16px;
   border: none;
-  color: black;
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
+
   &.active {
-    font-weight: 700;
-    color: red;
+   color: white;
+    background-color: red;
   }
   &.active::before {
     content: '';
@@ -27,7 +27,6 @@ export const HeaderLink = styled(NavLink)`
     height: 1px;
     border-radius: 1px;
     background-color: red;
-    transform: scale(100%);
     transition: transform 150ms 300ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 

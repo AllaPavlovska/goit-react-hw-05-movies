@@ -18,7 +18,6 @@ export const Grid = styled.ul`
   justify-content: center;
 `;
 
-
 export const CardItem = styled.div`
   display: flex;
   flex-direction: column;
