@@ -2,15 +2,13 @@ import React from 'react';
 import Movie from 'components/Movie/Movie';
 import { Grid } from 'pages/MovieList/MovieList.styled';
 
-const MovieList = ({ movies, configDetails, location }) => {
-  if (configDetails === null) return;
+const MovieList = ({ movies, location }) => {
   return (
     <Grid>
       {movies.map((movie, i) => (
         <Movie
           key={i}
           movie={movie}
-          configDetails={configDetails}
           location={location}
         />
       ))}
